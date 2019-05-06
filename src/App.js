@@ -47,11 +47,7 @@ class App extends Component {
 
   async fetchFredSeries(seriesId, frequency, observationStart) {
     this.setState({ isLoading: true });
-<<<<<<< HEAD
     const data = await fetch(`/api/fred/series/observations?series_id=${seriesId}&frequency=${frequency}&observation_start=${observationStart}&api_key=ac95f4955bcea62d846c5eea3adbddee&file_type=json`).then(
-=======
-    const data = await fetch(`/series/observations?series_id=${seriesId}&frequency=${frequency}&observation_start=${observationStart}&api_key=ac95f4955bcea62d846c5eea3adbddee&file_type=json`).then(
->>>>>>> Initial commit
       (response) => {
         if (response.status !== 200) {
           console.warn(`Looks like there was a problem. Status Code: ${response.status}`);
@@ -101,10 +97,6 @@ class App extends Component {
       data.T10YIE.forEach((dataGroup2) => {
         //if same date the calculation makes sense
         if (dataGroup1.x === dataGroup2.x) {
-<<<<<<< HEAD
-=======
-          console.log(dataGroup1.y, dataGroup2.y);
->>>>>>> Initial commit
           const y = dataGroup1.y - dataGroup2.y;
           chartData.push({ x: dataGroup1.x, y })
         }
